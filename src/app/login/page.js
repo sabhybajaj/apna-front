@@ -69,7 +69,7 @@ export default function Login() {
           </button>
         </form>
         <p className={styles.registerLink}>
-          Don't have an account? <a href="/register">Register here</a>
+          {"Don't have an account?"} <a href="/register">Register here</a>
         </p>
       </div>
     </div>
