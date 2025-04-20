@@ -19,7 +19,7 @@ export default function Progress() {
 
     const fetchProgressCheck = async () => {
       try{
-        const response = await fetch(`http://localhost:5000/api/progress/progress-check/${userId}`);
+        const response = await fetch(`https://apna-api.onrender.com/api/progress/progress-check/${userId}`);
         const data = await response.json();
         console.log("data.progress",data.progress)
         setProgress(data.progress);

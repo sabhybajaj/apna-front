@@ -12,7 +12,7 @@ export default function Dashboard() {
 
   const fetchProgressCheck = async () => {
     try{
-      const response = await fetch(`http://localhost:5000/api/progress/progress-check/${userId}`);
+      const response = await fetch(`https://apna-api.onrender.com/api/progress/progress-check/${userId}`);
       const data = await response.json();
       setCheckProgress(data.progress);
       // return data.progress;
@@ -26,7 +26,7 @@ export default function Dashboard() {
   useEffect(() => {
     const fetchTopics = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/dsa-topics");
+        const response = await fetch("https://apna-api.onrender.com/api/dsa-topics");
         const data = await response.json();
         setTopics(data);
         
@@ -47,7 +47,7 @@ export default function Dashboard() {
 
     console.log("Checkbox toggled:", { topicId, subTopicId, status }); // Debug log
     try {
-      const response = await fetch("http://localhost:5000/api/progress/update-status", {
+      const response = await fetch("https://apna-api.onrender.com/api/progress/update-status", {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ userId, topicId, subTopicId, status }),
